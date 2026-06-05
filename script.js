@@ -25,13 +25,22 @@ const gamemodeLabels = {
 
 const players = [
   {
-    id: 25,
+    id: 1,
     username: 'imewwmer',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' }
+  }
+  {
+    id: 2,
+    username: 'fortld',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'JAVA',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: 'LT5', axe: 'LT5', mace: 'LT5', crystal: 'LT5', diasmp: 'LT5', smp: 'LT5', pot: 'LT5', netherite: 'LT5', uhc: 'LT5' }
   }
 ];
 
