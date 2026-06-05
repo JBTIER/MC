@@ -248,7 +248,16 @@ const players = [
     title: 'The Ghost',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' }
-  }
+  },
+  {
+    id: 26,
+    username: 'ewwmer',
+    avatar: 'assets/players/baboabe.png',
+    region: 'ASIA',
+    title: 'The Rising Star',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: 'HT3', axe: 'HT3', mace: 'HT3', crystal: 'HT3', diasmp: 'HT3', smp: 'HT3', pot: 'HT3', netherite: 'HT3', uhc: 'HT3' }
+  },
 ];
 
 let currentGamemode = 'overall';
