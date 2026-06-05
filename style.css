@@ -175,7 +175,8 @@ body {
 }
 
 .nav-search-btn,
-.nav-menu-btn {
+.nav-menu-btn,
+.nav-discord-btn {
   background: none;
   border: none;
   color: var(--text-secondary);
@@ -188,12 +189,18 @@ body {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  text-decoration: none;
 }
 
 .nav-search-btn:hover,
 .nav-menu-btn:hover {
   background: var(--bg-glass);
   color: var(--text-primary);
+}
+
+.nav-discord-btn:hover {
+  background: rgba(88, 101, 242, 0.2);
+  color: #5865f2;
 }
 
 .hero {
