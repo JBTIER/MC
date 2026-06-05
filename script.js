@@ -31,7 +31,7 @@ const players = [
     region: 'ASIA',
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
-    tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' }
+    tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: 'LT3', pot: '', netherite: '', uhc: '' }
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ const players = [
     region: 'ASIA',
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
-    tiers: { sword: 'LT5', axe: 'LT5', mace: 'LT5', crystal: 'LT5', diasmp: 'LT5', smp: 'LT5', pot: 'LT5', netherite: 'LT5', uhc: 'LT5' }
+    tiers: { sword: '', axe: '', mace: '', crystal: 'LT3', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
   }
 ];
 
