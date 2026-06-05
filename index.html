@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JBTIER - Minecraft PvP Tier List</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>setTimeout(function(){var s=document.getElementById('loading-screen');if(s)s.classList.add('hide')},1500)</script>
+</head>
+<body>
+  <div id="loading-screen">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <svg viewBox="0 0 40 40" fill="none">
+          <rect x="2" y="2" width="36" height="36" rx="8" stroke="#4a9eff" stroke-width="3" fill="none"/>
+          <text x="20" y="26" text-anchor="middle" fill="#4a9eff" font-family="Arial" font-weight="900" font-size="20">J</text>
+        </svg>
+      </div>
+      <h1 class="loader-title">JBTIER</h1>
+      <p class="loader-subtitle">Loading Rankings...</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <svg class="nav-logo" viewBox="0 0 40 40" fill="none">
+          <rect x="2" y="2" width="36" height="36" rx="8" stroke="#4a9eff" stroke-width="3" fill="none"/>
+          <text x="20" y="26" text-anchor="middle" fill="#4a9eff" font-family="Arial" font-weight="900" font-size="20">J</text>
+        </svg>
+        <span class="nav-name">JBTIER</span>
+      </a>
+      <div class="nav-right">
+        <button class="nav-search-btn" id="navSearchBtn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-logo">
+        <svg viewBox="0 0 80 80" fill="none">
+          <rect x="4" y="4" width="72" height="72" rx="16" stroke="#4a9eff" stroke-width="4" fill="rgba(74,158,255,0.1)"/>
+          <text x="40" y="52" text-anchor="middle" fill="#4a9eff" font-family="Arial" font-weight="900" font-size="40">J</text>
+        </svg>
+      </div>
+      <h1 class="hero-title">JBTIER</h1>
+      <p class="hero-tagline">The competitive PvP tier list for Minecraft Java &amp; Bedrock.</p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number" data-target="128">0</span>
+          <span class="stat-label">Players Ranked</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="5">0</span>
+          <span class="stat-label">Regions</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="9">0</span>
+          <span class="stat-label">Game Modes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="controls">
+      <div class="search-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search player...">
+      </div>
+      <div class="sort-wrapper">
+        <label for="sortSelect" class="sort-label"><i class="fas fa-arrow-down-wide-short"></i></label>
+        <select id="sortSelect" class="sort-select">
+          <option value="points-desc">Highest Points</option>
+          <option value="points-asc">Lowest Points</option>
+          <option value="name-asc">Username A-Z</option>
+          <option value="name-desc">Username Z-A</option>
+          <option value="region">Region</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tabs" id="tabsContainer">
+      <button class="tab active" data-gamemode="overall">Overall</button>
+      <button class="tab" data-gamemode="sword">Sword</button>
+      <button class="tab" data-gamemode="axe">Axe</button>
+      <button class="tab" data-gamemode="mace">Mace</button>
+      <button class="tab" data-gamemode="crystal">Crystal</button>
+      <button class="tab" data-gamemode="diasmp">DiasMP</button>
+      <button class="tab" data-gamemode="smp">SMP</button>
+      <button class="tab" data-gamemode="pot">Pot</button>
+      <button class="tab" data-gamemode="netherite">Netherite Pot</button>
+      <button class="tab" data-gamemode="uhc">UHC</button>
+    </div>
+
+    <section class="leaderboard-section">
+      <div class="table-wrapper">
+        <table class="leaderboard" id="leaderboard">
+          <thead>
+            <tr>
+              <th class="col-rank">#</th>
+              <th class="col-player">Player</th>
+              <th class="col-region">Region</th>
+              <th class="col-title">Title</th>
+              <th class="col-points">Points</th>
+              <th class="col-tiers">Tiers</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody"></tbody>
+        </table>
+      </div>
+      <p class="no-results" id="noResults">No players match your search.</p>
+    </section>
+  </main>
+
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal" id="playerModal">
+      <button class="modal-close" id="modalCloseBtn"><i class="fas fa-times"></i></button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> JBTIER. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
