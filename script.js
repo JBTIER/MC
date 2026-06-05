@@ -29,7 +29,7 @@ const players = [
     username: 'imewwmer',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'The Ghost',
+    title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' }
   }
