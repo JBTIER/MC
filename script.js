@@ -44,6 +44,15 @@ const players = [
   },
   {
     id: 3,
+    username: 'UrRev',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'BEDROCK',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: 'LT3', axe: 'LT3', mace: 'LT3', crystal: 'LT3', diasmp: 'LT3', smp: 'LT3', pot: 'LT3', netherite: 'LT3', uhc: 'LT3' }
+  },
+  {
+    id: 4,
     username: 'Itsnotflako',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
