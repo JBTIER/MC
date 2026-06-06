@@ -41,6 +41,15 @@ const players = [
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: '', axe: '', mace: '', crystal: 'LT3', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
+  },
+  {
+    id: 3,
+    username: 'Itsnotflako',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'JAVA',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: 'LT3', pot: '', netherite: 'LT3', uhc: '' }
   }
 ];
 
