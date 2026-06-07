@@ -53,12 +53,48 @@ const players = [
   },
   {
     id: 4,
+    username: 'Moonlorddddd',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'BEDROCK',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: 'LT3', uhc: '' }
+  },
+  {
+    id: 5,
+    username: 'LUFFY_PARADISE',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'BEDROCK',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: '', axe: '', mace: 'LT3', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
+  },
+  {
+    id: 6,
+    username: 'longhairchinita',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'BEDROCK',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
+  },
+  {
+    id: 7,
     username: 'Itsnotflako',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: 'LT3', pot: '', netherite: 'LT3', uhc: '' }
+  },
+  {
+    id: 8,
+    username: '_SlipIn',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'JAVA',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: 'LT3', netherite: '', uhc: '' }
   }
 ];
 
