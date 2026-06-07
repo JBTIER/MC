@@ -47,7 +47,7 @@ const players = [
     username: 'UrRev',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'BEDROCK',
+    title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'LT3', axe: 'LT3', mace: 'LT3', crystal: 'LT3', diasmp: 'LT3', smp: 'LT3', pot: 'LT3', netherite: 'LT3', uhc: 'LT3' }
   },
@@ -56,7 +56,7 @@ const players = [
     username: 'Moonlorddddd',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'BEDROCK',
+    title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: 'LT3', uhc: '' }
   },
@@ -65,7 +65,7 @@ const players = [
     username: 'LUFFY_PARADISE',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'BEDROCK',
+    title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: '', axe: '', mace: 'LT3', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
   },
@@ -74,7 +74,7 @@ const players = [
     username: 'longhairchinita',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'BEDROCK',
+    title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
   },
