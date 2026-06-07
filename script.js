@@ -47,7 +47,7 @@ const players = [
     username: 'UrRev',
     avatar: 'assets/players/deadlox.png',
     region: 'ASIA',
-    title: 'JAVA',
+    title: 'BEDROCK',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: 'LT3', axe: 'LT3', mace: 'LT3', crystal: 'LT3', diasmp: 'LT3', smp: 'LT3', pot: 'LT3', netherite: 'LT3', uhc: 'LT3' }
   },
@@ -95,6 +95,24 @@ const players = [
     title: 'JAVA',
     socials: { youtube: '', twitter: '', discord: '' },
     tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: 'LT3', netherite: '', uhc: '' }
+  },
+  {
+    id: 9,
+    username: 'ORD Takamura',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'BEDROCK',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: 'LT3', smp: '', pot: '', netherite: '', uhc: '' }
+  },
+  {
+    id: 10,
+    username: 'Miloevery4day',
+    avatar: 'assets/players/deadlox.png',
+    region: 'ASIA',
+    title: 'JAVA',
+    socials: { youtube: '', twitter: '', discord: '' },
+    tiers: { sword: '', axe: 'LT3', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' }
   }
 ];
 
