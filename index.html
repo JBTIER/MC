@@ -34,7 +34,7 @@
         <span class="nav-name">JBTIER</span>
       </a>
       <div class="nav-right">
-        <a href="https://discord.gg/F2FBnDr6qT" class="nav-discord-btn" id="discordBtn" target="_blank" aria-label="Discord">
+        <a href="#" class="nav-discord-btn" id="discordBtn" target="_blank" aria-label="Discord">
           <i class="fab fa-discord"></i>
         </a>
         <button class="nav-search-btn" id="navSearchBtn" aria-label="Search">
@@ -106,6 +106,12 @@
       <button class="tab" data-gamemode="uhc">UHC</button>
     </div>
 
+    <div class="platform-tabs" id="platformTabs">
+      <button class="platform-tab active" data-platform="all">All</button>
+      <button class="platform-tab" data-platform="java"><i class="fas fa-cube"></i> Java</button>
+      <button class="platform-tab" data-platform="bedrock"><i class="fas fa-mobile-alt"></i> Bedrock</button>
+    </div>
+
     <section class="leaderboard-section">
       <div class="table-wrapper">
         <table class="leaderboard" id="leaderboard">
@@ -114,7 +120,7 @@
               <th class="col-rank">#</th>
               <th class="col-player">Player</th>
               <th class="col-region">Region</th>
-              <th class="col-title">Title</th>
+              <th class="col-platform">Platform</th>
               <th class="col-points">Points</th>
               <th class="col-tiers">Tiers</th>
             </tr>
