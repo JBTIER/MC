@@ -478,6 +478,10 @@ body {
   width: 80px;
 }
 
+.col-platform {
+  width: 100px;
+}
+
 .col-points {
   width: 80px;
 }
@@ -565,6 +569,49 @@ body {
 .region-badge.asia { background: rgba(245, 158, 11, 0.2); color: var(--region-asia); }
 .region-badge.oce { background: rgba(6, 182, 212, 0.2); color: var(--region-oce); }
 .region-badge.sa { background: rgba(16, 185, 129, 0.2); color: var(--region-sa); }
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.platform-badge.java { background: rgba(74, 158, 255, 0.2); color: var(--accent); }
+.platform-badge.bedrock { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+
+.platform-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.platform-tab {
+  padding: 8px 18px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.platform-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+.platform-tab.active {
+  color: var(--text-primary);
+  background: rgba(74, 158, 255, 0.15);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
 
 .title-text {
   color: var(--text-secondary);
