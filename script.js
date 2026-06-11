@@ -84,10 +84,10 @@ function getRankBadge(index) {
 }
 
 function getTierHtml(tiers) {
-  return Object.values(tiers)
-    .filter(t => t && tierOrder.includes(t))
-    .sort((a, b) => tierOrder.indexOf(a) - tierOrder.indexOf(b))
-    .map(t => `<span class="tier-badge ${t}">${t}</span>`)
+  return Object.entries(tiers)
+    .filter(([, t]) => t && tierOrder.includes(t))
+    .sort(([, a], [, b]) => tierOrder.indexOf(a) - tierOrder.indexOf(b))
+    .map(([g, t]) => `<span class="tier-badge ${t}"><img class="kit-icon-xs" src="assets/kits/${g}.svg" alt="" loading="lazy"> ${t}</span>`)
     .join('');
 }
 
@@ -147,9 +147,10 @@ function renderLeaderboard() {
       tierDisplay = getTierHtml(player.tiers);
     } else {
       const tier = player.tiers[currentGamemode];
+      const icon = `<img class="kit-icon-xs" src="assets/kits/${currentGamemode}.svg" alt="" loading="lazy">`;
       tierDisplay = tier
-        ? `<span class="tier-badge ${tier}">${gamemodeLabels[currentGamemode]}: ${tier}</span>`
-        : '<span class="tier-badge" style="color:var(--text-muted)">N/A</span>';
+        ? `<span class="tier-badge ${tier}">${icon} ${gamemodeLabels[currentGamemode]}: ${tier}</span>`
+        : `<span class="tier-badge" style="color:var(--text-muted)">${icon} N/A</span>`;
     }
 
     return `
@@ -186,10 +187,11 @@ function openModal(playerId) {
     .map(g => {
       const tier = player.tiers[g];
       const label = gamemodeLabels[g];
+      const icon = '<img class="kit-icon-sm" src="assets/kits/' + g + '.svg" alt="" loading="lazy">';
       if (tier) {
-        return '<div class="modal-tier-item"><span class="modal-tier-label">' + label + ':</span><span class="modal-tier-value tier-badge ' + tier + '">' + tier + '</span></div>';
+        return '<div class="modal-tier-item">' + icon + '<span class="modal-tier-label">' + label + ':</span><span class="modal-tier-value tier-badge ' + tier + '">' + tier + '</span></div>';
       }
-      return '<div class="modal-tier-item"><span class="modal-tier-label">' + label + ':</span><span class="modal-tier-value" style="color:var(--text-muted)">N/A</span></div>';
+      return '<div class="modal-tier-item">' + icon + '<span class="modal-tier-label">' + label + ':</span><span class="modal-tier-value" style="color:var(--text-muted)">N/A</span></div>';
     }).join('');
 
   function socialLink(url, platform, icon) {
