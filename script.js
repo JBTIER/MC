@@ -48,7 +48,7 @@ const players = [
   { id: 22, username: 'Danteh', region: 'NA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT2', axe: 'HT2', mace: 'HT2', crystal: 'HT2', diasmp: 'HT2', smp: 'HT2', pot: 'HT2', netherite: 'HT2', uhc: 'HT2' } },
   { id: 23, username: 'Krusty', region: 'OCE', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT1', axe: 'LT1', mace: 'LT1', crystal: 'LT1', diasmp: 'LT1', smp: 'LT2', pot: 'LT1', netherite: 'LT1', uhc: 'LT1' } },
   { id: 24, username: 'BaboAbe', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT3', axe: 'HT3', mace: 'HT3', crystal: 'HT3', diasmp: 'HT3', smp: 'HT3', pot: 'HT3', netherite: 'HT3', uhc: 'HT3' } },
-  { id: 25, username: 'Deadlox', region: 'NA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' } }
+  { id: 25, username: 'Deadlox', region: 'NA', platform: 'Bedrock', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT1', axe: 'HT2', mace: 'HT2', crystal: 'LT2', diasmp: 'LT2', smp: 'LT3', pot: 'HT2', netherite: 'HT2', uhc: 'LT2' } }
 ];
 
 let currentGamemode = 'overall';
