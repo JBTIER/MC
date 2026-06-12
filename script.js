@@ -40,7 +40,7 @@ const players = [
   { id: 14, username: 'kelv1n_', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
   { id: 15, username: 'DashPixel', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: 'LT3', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
   { id: 16, username: 'H4d0gx', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT4', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
-  { id: 17, username: 'Deadlox', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } }
+  { id: 17, username: 'JACOBTHEUNKNOWN', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: 'LT3', smp: 'LT3', pot: '', netherite: '', uhc: '' } }
 ];
 
 let currentGamemode = 'overall';
