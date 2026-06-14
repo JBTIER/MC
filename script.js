@@ -87,14 +87,10 @@ function getTierNumber(tier) {
   return tier.replace('HT', '').replace('LT', '');
 }
 
-function getTierBarHtml(tier) {
-  if (!tier) return '<div class="tier-bar">' + [1,2,3,4,5].map(n => '<div class="tier-bar-box inactive"><span class="tier-bar-num">T' + n + '</span></div>').join('') + '</div>';
-  const num = tier.replace('HT', '').replace('LT', '');
-  return '<div class="tier-bar">' + [1,2,3,4,5].map(n => {
-    const active = n === parseInt(num);
-    const display = active ? tier : 'T' + n;
-    return '<div class="tier-bar-box ' + (active ? 'active ' + tier : 'inactive') + '"><span class="tier-bar-num">' + display + '</span></div>';
-  }).join('') + '</div>';
+function getTierBoxHtml(tier) {
+  if (!tier) return '<span class="tier-single na">N/A</span>';
+  const pts = tierPoints[tier] || 0;
+  return '<div class="tier-single ' + tier + '"><span class="tier-single-code">' + tier + '</span><span class="tier-single-pts">' + pts + '</span></div>';
 }
 
 function getTierHtml(tiers) {
@@ -122,10 +118,30 @@ function getFilteredAndSortedPlayers() {
 
   switch (currentSort) {
     case 'points-desc':
-      result.sort((a, b) => calculatePoints(b) - calculatePoints(a));
+      if (currentGamemode === 'overall') {
+        result.sort((a, b) => calculatePoints(b) - calculatePoints(a));
+      } else {
+        result.sort((a, b) => {
+          const ta = a.tiers[currentGamemode];
+          const tb = b.tiers[currentGamemode];
+          const ia = ta ? tierOrder.indexOf(ta) : tierOrder.length;
+          const ib = tb ? tierOrder.indexOf(tb) : tierOrder.length;
+          return ia - ib;
+        });
+      }
       break;
     case 'points-asc':
-      result.sort((a, b) => calculatePoints(a) - calculatePoints(b));
+      if (currentGamemode === 'overall') {
+        result.sort((a, b) => calculatePoints(a) - calculatePoints(b));
+      } else {
+        result.sort((a, b) => {
+          const ta = a.tiers[currentGamemode];
+          const tb = b.tiers[currentGamemode];
+          const ia = ta ? tierOrder.indexOf(ta) : tierOrder.length;
+          const ib = tb ? tierOrder.indexOf(tb) : tierOrder.length;
+          return ib - ia;
+        });
+      }
       break;
     case 'name-asc':
       result.sort((a, b) => a.username.localeCompare(b.username));
@@ -134,7 +150,17 @@ function getFilteredAndSortedPlayers() {
       result.sort((a, b) => b.username.localeCompare(a.username));
       break;
     case 'region':
-      result.sort((a, b) => a.region.localeCompare(b.region) || calculatePoints(b) - calculatePoints(a));
+      if (currentGamemode === 'overall') {
+        result.sort((a, b) => a.region.localeCompare(b.region) || calculatePoints(b) - calculatePoints(a));
+      } else {
+        result.sort((a, b) => a.region.localeCompare(b.region) || (() => {
+          const ta = a.tiers[currentGamemode];
+          const tb = b.tiers[currentGamemode];
+          const ia = ta ? tierOrder.indexOf(ta) : tierOrder.length;
+          const ib = tb ? tierOrder.indexOf(tb) : tierOrder.length;
+          return ia - ib;
+        })());
+      }
       break;
   }
 
@@ -154,14 +180,16 @@ function renderLeaderboard() {
   noResults.classList.remove('visible');
 
   tbody.innerHTML = sorted.map((player, index) => {
-    const points = calculatePoints(player);
+    const points = currentGamemode === 'overall'
+      ? calculatePoints(player)
+      : (tierPoints[player.tiers[currentGamemode]] || 0);
 
     let tierDisplay = '';
     if (currentGamemode === 'overall') {
       tierDisplay = getTierHtml(player.tiers);
     } else {
       const tier = player.tiers[currentGamemode];
-      tierDisplay = getTierBarHtml(tier);
+      tierDisplay = getTierBoxHtml(tier);
     }
 
     return `
@@ -188,7 +216,9 @@ function openModal(playerId) {
 
   const overlay = document.getElementById('modalOverlay');
   const body = document.getElementById('modalBody');
-  const points = calculatePoints(player);
+  const points = currentGamemode === 'overall'
+    ? calculatePoints(player)
+    : (tierPoints[player.tiers[currentGamemode]] || 0);
 
   const sorted = getFilteredAndSortedPlayers();
   const rank = sorted.findIndex(p => p.id === playerId) + 1;
@@ -200,7 +230,7 @@ function openModal(playerId) {
       const label = gamemodeLabels[g];
       const icon = '<img class="kit-icon-sm" src="assets/kits/' + g + '.svg" alt="" loading="lazy">';
       const pts = tier ? tierPoints[tier] || 0 : 0;
-      return '<div class="modal-tier-item"><div class="modal-tier-left">' + icon + '<span class="modal-tier-label">' + label + '</span></div><div class="modal-tier-right">' + getTierBarHtml(tier) + '<span class="modal-tier-pts">' + pts + '</span></div></div>';
+      return '<div class="modal-tier-item"><div class="modal-tier-left">' + icon + '<span class="modal-tier-label">' + label + '</span></div><div class="modal-tier-right">' + getTierBoxHtml(tier) + '<span class="modal-tier-pts">' + pts + '</span></div></div>';
     }).join('');
 
   function socialLink(url, platform, icon) {
@@ -350,5 +380,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 40);
   });
 });
-
 
