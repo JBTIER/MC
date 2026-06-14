@@ -87,11 +87,14 @@ function getTierNumber(tier) {
   return tier.replace('HT', '').replace('LT', '');
 }
 
-function getTierBoxHtml(tier) {
-  if (!tier) return '<span class="tier-box na">N/A</span>';
-  const num = getTierNumber(tier);
-  const pts = tierPoints[tier] || 0;
-  return '<div class="tier-box ' + tier + '"><span class="tier-box-num">' + num + '</span><span class="tier-box-label">Tier</span><span class="tier-box-pts">' + pts + ' pts</span></div>';
+function getTierBarHtml(tier) {
+  if (!tier) return '<div class="tier-bar">' + [1,2,3,4,5].map(n => '<div class="tier-bar-box inactive"><span class="tier-bar-num">T' + n + '</span></div>').join('') + '</div>';
+  const num = tier.replace('HT', '').replace('LT', '');
+  return '<div class="tier-bar">' + [1,2,3,4,5].map(n => {
+    const active = n === parseInt(num);
+    const display = active ? tier : 'T' + n;
+    return '<div class="tier-bar-box ' + (active ? 'active ' + tier : 'inactive') + '"><span class="tier-bar-num">' + display + '</span></div>';
+  }).join('') + '</div>';
 }
 
 function getTierHtml(tiers) {
@@ -158,9 +161,7 @@ function renderLeaderboard() {
       tierDisplay = getTierHtml(player.tiers);
     } else {
       const tier = player.tiers[currentGamemode];
-      tierDisplay = tier
-        ? getTierBoxHtml(tier)
-        : '<span class="tier-box na">N/A</span>';
+      tierDisplay = getTierBarHtml(tier);
     }
 
     return `
@@ -199,10 +200,7 @@ function openModal(playerId) {
       const label = gamemodeLabels[g];
       const icon = '<img class="kit-icon-sm" src="assets/kits/' + g + '.svg" alt="" loading="lazy">';
       const pts = tier ? tierPoints[tier] || 0 : 0;
-      if (tier) {
-        return '<div class="modal-tier-item"><div class="modal-tier-left">' + icon + '<span class="modal-tier-label">' + label + '</span></div><div class="modal-tier-right">' + getTierBoxHtml(tier) + '<span class="modal-tier-pts">' + pts + '</span></div></div>';
-      }
-      return '<div class="modal-tier-item"><div class="modal-tier-left">' + icon + '<span class="modal-tier-label">' + label + '</span></div><div class="modal-tier-right"><span class="tier-box na">N/A</span><span class="modal-tier-pts">0</span></div></div>';
+      return '<div class="modal-tier-item"><div class="modal-tier-left">' + icon + '<span class="modal-tier-label">' + label + '</span></div><div class="modal-tier-right">' + getTierBarHtml(tier) + '<span class="modal-tier-pts">' + pts + '</span></div></div>';
     }).join('');
 
   function socialLink(url, platform, icon) {
@@ -352,4 +350,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 40);
   });
 });
+
 
