@@ -38,9 +38,11 @@ const players = [
   { id: 12, username: 'longhairchinita', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
   { id: 13, username: 'SedralM', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT5', axe: '', mace: '', crystal: 'LT3', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
   { id: 14, username: 'kelv1n_', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
-  { id: 15, username: 'DashPixel', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: 'LT3', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
+  { id: 15, username: 'DashPixel', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: 'LT3', mace: '', crystal: '', diasmp: '', smp: 'LT3', pot: '', netherite: '', uhc: '' } },
   { id: 16, username: 'H4d0gx', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'HT4', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
-  { id: 17, username: 'JACOBTHEUNKNOWN', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: 'LT3', smp: 'LT3', pot: '', netherite: '', uhc: '' } }
+  { id: 17, username: 'Blue_3111', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: 'LT3', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
+  { id: 18, username: 'Goodyriine', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: 'LT3', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
+  { id: 19, username: 'JACOBTHEUNKNOWN', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: 'LT3', smp: 'LT3', pot: '', netherite: '', uhc: '' } }
 ];
 
 let currentGamemode = 'overall';
