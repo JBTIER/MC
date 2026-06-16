@@ -46,7 +46,8 @@ const players = [
   { id: 20, username: 'yksoulzs', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT5', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } },
   { id: 21, username: 'DangerNayr', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: '', pot: '', netherite: 'HT5', uhc: '' } },
   { id: 22, username: 'ShadowCraft072', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: '', crystal: '', diasmp: '', smp: 'LT3', pot: '', netherite: 'HT4', uhc: '' } },
-  { id: 23, username: 'ProjectProxy', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: 'LT5', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } }
+  { id: 23, username: 'Kkiga', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: 'LT3', axe: '', mace: '', crystal: '', diasmp: 'LT3', smp: '', pot: '', netherite: 'HT4', uhc: '' } },
+  { id: 24, username: 'ProjectProxy', region: 'ASIA', platform: 'Java', socials: { youtube: '', twitter: '', discord: '' }, tiers: { sword: '', axe: '', mace: 'LT5', crystal: '', diasmp: '', smp: '', pot: '', netherite: '', uhc: '' } }
 ];
 
 let currentGamemode = 'overall';
